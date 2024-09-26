@@ -16,5 +16,6 @@ class Prompt extends Model
     // use SoftDeletes;
 
     public $table = 'prompts';
+    protected $fillable = ['webhook_url', 'image_description'];
     // public $timestamps = false;
 }

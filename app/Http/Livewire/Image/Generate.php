@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Image;
 
 use App\Models\Image;
+use App\Models\Prompt;
 use Livewire\Component;
 use LucasDotVin\Soulbscription\Models\Plan;
 use GuzzleHttp\Client;
@@ -10,6 +11,7 @@ use GuzzleHttp\Client;
 class Generate extends Component
 {
     public Image $image;
+    public Prompt $prompt;
 
     public function render()
     {
@@ -39,7 +41,7 @@ class Generate extends Component
                     "model" => "dall-e-3", //OpenAI model
                     "prompt" => $description,
                     "n" => 1,
-                    "size" => "1368x768", //Image resolution
+                    "size" => "1024x1024", //Image resolution
                 ],
             ]);
 
@@ -50,6 +52,11 @@ class Generate extends Component
                 'url' => $url,
                 'description' => $description,
             ]);
+            Prompt::create([
+                'webhook_url' => $url,
+                'image_description' => $description,
+            ]);
+
 
             //Set the generated URL for displaying in the view
             $this->generatedUrl = $url ?? null;

@@ -11,16 +11,20 @@
 
                         </th>
                         <th style="background-color: rgb(39,48,62); border: none; color: white">
-                            {{ trans('cruds.prompt.fields.prompt') }}
+                            {{ trans('cruds.prompt.fields.description') }}
+
+                        </th>
+                        <th style="background-color: rgb(39,48,62); border: none; color: white">
+                            {{ trans('cruds.prompt.fields.image_url') }}
 
                         </th>
                         <th style="background-color: rgb(39,48,62); border: none; color: white">
                             {{ trans('cruds.prompt.fields.created_at') }}
 
                         </th>
-                        <th style="background-color: rgb(39,48,62); border: none; color: white">
-                            {{ trans('cruds.prompt.fields.deleted_at') }}
-                        </th>
+                        <!-- <th style="background-color: rgb(39,48,62); border: none; color: white">
+                            {{ trans('cruds.prompt.fields.updated_at') }}
+                        </th> -->
                         <th style="background-color: rgb(39,48,62); border: none;">
                         </th>
                     </tr>
@@ -36,27 +40,30 @@
                             </td>
 
                             <td style="border: none">
-                                {{ $prompt->prompt }}
+                                {{ $prompt->image_description }}
+                            </td>
+                            <td style="border: none">
+                                {{ $prompt->webhook_url }}
                             </td>
                             <td style="border: none">
                                 {{ $prompt->created_at }}
                             </td>
-                            <td style="border: none">
-                                {{ $prompt->deleted_at }}
-                            </td>
+                            <!-- <td style="border: none">
+                                {{ $prompt->updated_at }}
+                            </td> -->
 
-                            <td style="border: none">
-                                <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.prompts.show', $prompt) }}">
+                            <!-- <td style="border: none">
+                                <a class="btn btn-sm btn-info mr-2 btn-event" href="{{ route('admin.prompts.show', $prompt) }}">
                                     {{ trans('global.view') }}
                                 </a>
-                                <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.prompts.edit', $prompt) }}">
+                                <a class="btn btn-sm btn-success mr-2 btn-event" href="{{ route('admin.prompts.edit', $prompt) }}">
                                     {{ trans('global.edit') }}
                                 </a>
-                                <button class="btn btn-sm btn-rose mr-2" type="button" wire:click="confirm('delete', {{ $prompt->id }})" wire:loading.attr="disabled">
+                                <button class="btn btn-sm btn-rose mr-2 btn-event" type="button" wire:click="confirm('delete', {{ $prompt->id }})" wire:loading.attr="disabled">
                                     {{ trans('global.delete') }}
                                 </button>
                                 </div>
-                            </td>
+                            </td> -->
                         </tr>
                         @empty
                         <tr>

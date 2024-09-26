@@ -87,7 +87,6 @@ h1 {
     @media (max-width: 768px) {
         margin-left: 0px;
     }
-
 }
 
 .intro-img {
@@ -158,3 +157,7 @@ h1 {
     border-radius: 100px;
 }
 
+.btn-event {
+    width: 60px;
+    text-align: center;
+}

@@ -87,11 +87,13 @@ return [
         'title'          => 'Prompt',
         'title_singular' => 'Prompt',
         'fields'    => [
-            'IATA_code'      => 'IATA Code',
+            'IATA_code'         => 'IATA Code',
             'id'                => 'ID',
-            'prompt'           => 'Prompt',
+            'prompt'            => 'Prompt',
             'created_at'        => 'Created at',
-            'deleted_at'        => 'Deleted at',
+            'updated_at'        => 'Updated at',
+            'description'       => 'Description',
+            'image_url'         => 'Image Url'
         ]
     ],
     'image' => [
